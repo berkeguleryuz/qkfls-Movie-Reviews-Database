@@ -6,12 +6,14 @@ const strings = require("/app/utils/strings.json");
 const { CloudantV1 } = require('@ibm-cloud/cloudant');
 const { BasicAuthenticator } = require('ibm-cloud-sdk-core');
 const uuid = require('uuid');
+ # When no port is specified, starts at default port 5000
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 
 // parse application/json
 app.use(bodyParser.json())
+
 
 let NLU_APIKEY, NLU_URL, CLOUDANT_URL, CLOUDANT_API;
 let moviesDb, naturalLanguageUnderstanding, cloudant;
